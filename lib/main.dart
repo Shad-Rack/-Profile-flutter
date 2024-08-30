@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             //Stretch: to open the container from left to right, letting it toch both sides
             //To move all the container to the right side; create an invisible container and make it with infinity (eg. with: doble.infinity) and set mainaxisalignment to "end" attribute
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: Colors.white,
               radius: 50.0,
               backgroundImage: AssetImage('assets/profile.jpg'),
             ),
-            Text('SHADRACK',
+            const Text('SHADRACK',
                 style: TextStyle(color: Colors.white, fontSize: 30.0)),
-            Text(
+            const Text(
               'Flutter Developer',
               style: TextStyle(
                   fontSize: 20.0,
@@ -30,47 +30,41 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0),
             ),
-            Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 60.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.phone,
-                    color: Colors.teal,
-                  ),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  Text(
-                    '+233 266362783',
-                    style:
-                        TextStyle(color: Colors.teal.shade700, fontSize: 20.0),
-                  ),
-                ],
+
+            SizedBox(
+              height: 30.0,
+              width: 180.0,
+              child: Divider(
+                color: Colors.teal.shade100,
+              ),
+            ),
+            Card(
+              margin:
+                  const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0),
+              child: ListTile(
+                leading: const Icon(
+                  Icons.phone,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  '+233 266362783',
+                  style: TextStyle(color: Colors.teal.shade700, fontSize: 20.0),
+                ),
               ),
             ),
 
-            Container(
-              padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.symmetric(vertical: 5, horizontal: 60),
+            Card(
+              margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
               color: Colors.white,
-              child: Row(
-                children: [
-                  Icon(
+              child: ListTile(
+                  leading: const Icon(
                     Icons.email,
                     color: Colors.teal,
                   ),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  Text(
-                    'shadrackkoufie23@gmail.com',
+                  title: Text(
+                    'shadrack@gmail.com',
                     style: TextStyle(color: Colors.teal.shade700),
-                  )
-                ],
-              ),
+                  )),
             )
           ]),
         ),
